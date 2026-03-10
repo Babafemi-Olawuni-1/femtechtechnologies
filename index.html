@@ -3,1028 +3,687 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FemTech Technologies - Web Development & Digital Solutions in Ogun</title>
-    <meta name="description" content="Professional web development, mobile apps & blockchain solutions in Ogun, Nigeria. WhatsApp: +234 901 365 6460">
-    <meta name="keywords" content="Nigeria web development, Lagos tech company, e-learning solutions, blockchain developers, mobile app development Lagos">
-    <meta name="author" content="Babafemi David Olawuni">
+    <title>Olawuni Babafemi David | FemTech</title>
     
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://babafemi-olawuni-1.github.io/femtechtechnologies/">
-    <meta property="og:title" content="FemTech Technologies - Digital Solutions in Ogun">
-    <meta property="og:description" content="Professional web and mobile app development services in Ogun, Nigeria">
-    <meta property="og:image" content="https://babafemi-olawuni-1.github.io/femtechtechnologies/images/og-image.jpg">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
     
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://babafemi-olawuni-1.github.io/femtechtechnologies/">
-    <meta property="twitter:title" content="FemTech Technologies - Digital Solutions">
-    <meta property="twitter:description" content="Professional web and mobile app development services in Ogun">
-    <meta property="twitter:image" content="https://babafemi-olawuni-1.github.io/femtechtechnologies/images/og-image.jpg">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
-    <!-- Facebook Pixel Code -->
-    <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', 'YOUR_PIXEL_ID');
-    fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"
-    /></noscript>
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --primary: #6c63ff;
-            --secondary: #4d44db;
-            --dark: #2a2a72;
-            --light: #f8f9fa;
-            --success: #28a745;
-            --warning: #ffc107;
-            --danger: #dc3545;
-            --gray: #6c757d;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            background-color: var(--light);
-            color: #333;
-            line-height: 1.6;
-        }
-        
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        section {
-            padding: 80px 0;
-        }
-        
-        h1, h2, h3, h4 {
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-        
-        h1 {
-            font-size: 3rem;
-        }
-        
-        h2 {
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 50px;
-            position: relative;
-        }
-        
-        h2::after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: var(--primary);
-            border-radius: 2px;
-        }
-        
-        p {
-            margin-bottom: 15px;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background: var(--primary);
-            color: white;
-            border: none;
-            border-radius: 30px;
-            cursor: pointer;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            text-align: center;
-        }
-        
-        .btn:hover {
-            background: var(--secondary);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        .btn-outline {
-            background: transparent;
-            border: 2px solid var(--primary);
-            color: var(--primary);
-        }
-        
-        .btn-outline:hover {
-            background: var(--primary);
-            color: white;
-        }
-        
-        /* Header & Navigation */
-        header {
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-        
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-        }
-        
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--dark);
-            text-decoration: none;
-        }
-        
-        .logo span {
-            color: var(--primary);
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-        
-        .nav-links li {
-            margin-left: 30px;
-        }
-        
-        .nav-links a {
-            color: var(--dark);
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-        
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-        
-        .menu-toggle {
-            display: none;
-            cursor: pointer;
-            font-size: 1.5rem;
-        }
-        
-        /* Hero Section */
-        #hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            background: linear-gradient(135deg, rgba(108, 99, 255, 0.1) 0%, rgba(77, 68, 219, 0.1) 100%);
-            padding-top: 80px;
-        }
-        
-        .hero-content {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        
-        .hero-text {
-            flex: 1;
-            padding-right: 50px;
-            padding-top: 150px;
-        }
-        
-        .hero-image {
-            flex: 1;
-            text-align: center;
-        }
-        
-        .hero-image img {
-            max-width: 100%;
-            height: auto;
-            animation: float 3s ease-in-out infinite;
-        }
-        
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-            100% { transform: translateY(0px); }
-        }
-        
-        /* About Section */
-        #about {
-            background-color: white;
-        }
-        
-        .about-content {
-            display: flex;
-            align-items: center;
-            gap: 50px;
-        }
-        
-        .about-image {
-            flex: 1;
-        }
-        
-        .about-image img {
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-        }
-        
-        .about-text {
-            flex: 1;
-        }
-        
-        .skills {
-            margin-top: 30px;
-        }
-        
-        .skill-item {
-            margin-bottom: 20px;
-        }
-        
-        .skill-name {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
-        }
-        
-        .skill-bar {
-            height: 10px;
-            background: #e9ecef;
-            border-radius: 5px;
-            overflow: hidden;
-        }
-        
-        .skill-progress {
-            height: 100%;
-            background: var(--primary);
-            border-radius: 5px;
-        }
-        
-        /* Services Section */
-        #services {
-            background-color: #f8f9fa;
-        }
-        
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .service-card {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            text-align: center;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        .service-icon {
-            font-size: 3rem;
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
-        
-        /* Portfolio Section */
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .portfolio-item {
-            position: relative;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .portfolio-image {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
-        .portfolio-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(108, 99, 255, 0.9);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            padding: 20px;
-            text-align: center;
-            color: white;
-        }
-        
-        .portfolio-item:hover .portfolio-overlay {
-            opacity: 1;
-        }
-        
-        .portfolio-item:hover .portfolio-image {
-            transform: scale(1.1);
-        }
-        
-        /* Contact Section */
-        #contact {
-            background-color: white;
-        }
-        
-        .contact-container {
-            display: flex;
-            gap: 50px;
-        }
-        
-        .contact-info {
-            flex: 1;
-        }
-        
-        .contact-info h3 {
-            margin-bottom: 30px;
-        }
-        
-        .contact-details {
-            margin-bottom: 30px;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        
-        .contact-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--primary);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-right: 20px;
-            font-size: 1.2rem;
-        }
-        
-        .contact-form {
-            flex: 1;
-            background: #f8f9fa;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-control {
-            width: 100%;
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-        
-        textarea.form-control {
-            min-height: 150px;
-            resize: vertical;
-        }
-        
-        /* Social Media Buttons */
-        .social-media-section {
-            margin: 40px 0;
-            text-align: center;
-        }
-        
-        .social-btn {
-            display: inline-flex;
-            align-items: center;
-            padding: 12px 25px;
-            margin: 10px 5px;
-            background: var(--primary);
-            color: white;
-            border-radius: 30px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        
-        .social-btn:hover {
-            background: var(--secondary);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .social-btn i {
-            margin-right: 10px;
-            font-size: 1.2rem;
-        }
-        
-        /* Footer */
-        footer {
-            background: var(--dark);
-            color: white;
-            padding: 50px 0 20px;
-        }
-        
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 40px;
-        }
-        
-        .footer-column {
-            flex: 1;
-            padding: 0 20px;
-        }
-        
-        .footer-column h3 {
-            margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 10px;
-        }
-        
-        .footer-column h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 2px;
-            background: var(--primary);
-        }
-        
-        .footer-links {
-            list-style: none;
-        }
-        
-        .footer-links li {
-            margin-bottom: 10px;
-        }
-        
-        .footer-links a {
-            color: #adb5bd;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        .footer-links a:hover {
-            color: white;
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 15px;
-        }
-        
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: white;
-            transition: all 0.3s ease;
-        }
-        
-        .social-links a:hover {
-            background: var(--primary);
-            transform: translateY(-3px);
-        }
-        
-        .copyright {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #adb5bd;
-            font-size: 0.9rem;
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            .hero-content, .about-content, .contact-container {
-                flex-direction: column;
-            }
-            
-            .hero-text, .about-text, .contact-info, .contact-form {
-                padding-right: 0;
-                margin-bottom: 50px;
-            }
-            
-            .hero-image, .about-image {
-                margin-top: 50px;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .menu-toggle {
-                display: block;
-            }
-            
-            .nav-links {
-                position: fixed;
-                top: 80px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 80px);
-                background: white;
-                flex-direction: column;
-                align-items: center;
-                padding: 40px 0;
-                transition: left 0.3s ease;
-                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-            }
-            
-            .nav-links.active {
-                left: 0;
-            }
-            
-            .nav-links li {
-                margin: 15px 0;
-            }
-            
-            .footer-content {
-                flex-wrap: wrap;
-            }
-            
-            .footer-column {
-                flex: 100%;
-                margin-bottom: 30px;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            h1 {
-                font-size: 2.5rem;
-            }
-            
-            h2 {
-                font-size: 2rem;
-            }
-            
-            section {
-                padding: 60px 0;
-            }
-            
-            .social-btn {
-                width: 100%;
-                justify-content: center;
-                margin: 5px 0;
-            }
-        }
-    </style>
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Header -->
-    <header>
+    <!-- Code Rain Background -->
+    <canvas id="code-rain"></canvas>
+    
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
         <div class="container">
-            <nav>
-                <a href="#" class="logo">Fem<span>Tech</span></a>
-                <div class="menu-toggle" id="mobile-menu">
-                    <i class="fas fa-bars"></i>
-                </div>
-                <ul class="nav-links" id="nav-links">
-                    <li><a href="#hero">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#contact">Contact</a></li>
+            <div class="navbar-wrapper">
+                <a href="#home" class="logo">
+                    <span class="logo-bracket">&lt;</span>
+                    <span class="logo-text">Fem<span class="logo-highlight">Tech</span></span>
+                    <span class="logo-bracket">/&gt;</span>
+                </a>
+                
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link active">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#projects" class="nav-link">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#skills" class="nav-link">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link">Contact</a>
+                    </li>
                 </ul>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section id="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1>Web Development & Digital Solutions in Ogun</h1>
-                    <p>FemTech Technologies builds custom websites, mobile apps, and blockchain solutions for businesses across Nigeria. WhatsApp: +234 901 365 6460</p>
-                    <div class="hero-buttons">
-                        <a href="#contact" class="btn">Get Started</a>
-                        <a href="#portfolio" class="btn btn-outline">Our Work</a>
-                    </div>
-                </div>
-                <div class="hero-image">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="FemTech web development team in Ogun">
-                </div>
+                
+                <button class="mobile-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </div>
-    </section>
+    </nav>
 
-    <!-- About Section -->
-    <section id="about">
-        <div class="container">
-            <h2>About FemTech</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>Innovative Digital Solutions Tailored to Your Needs</h3>
-                    <p>FemTech Technologies is a forward-thinking digital solutions provider founded by Babafemi David Olawuni. We specialize in building robust, scalable web applications that solve real-world problems.</p>
-                    <p>Our expertise spans across web development, educational technology systems, blockchain integration, and custom business solutions that drive engagement and revenue.</p>
-                    <div class="skills">
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>Web Development</span>
-                                <span>95%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 95%;"></div>
+    <main>
+        <!-- HOME SECTION -->
+        <section id="home" class="section home">
+            <div class="container">
+                <div class="home-grid">
+                    <!-- Left Content -->
+                    <div class="home-content" data-aos="fade-right">
+                        <div class="home-badge">
+                            <span class="badge-line"></span>
+                            <span class="badge-text">WELCOME TO MY PORTFOLIO</span>
+                        </div>
+                        
+                        <h1 class="home-title">
+                            <span class="title-line">
+                                <span class="title-greeting">Hi, I'm</span>
+                                <span class="title-name">Olawuni</span>
+                            </span>
+                            <span class="title-line">
+                                <span class="title-name">Babafemi</span>
+                                <span class="title-name highlight">David</span>
+                            </span>
+                        </h1>
+                        
+                        <div class="home-typed">
+                            <span class="typed-prefix">I</span>
+                            <div class="typed-container">
+                                <span class="typed-text" id="typed-text"></span>
+                                <span class="typed-cursor">|</span>
                             </div>
                         </div>
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>Mobile Development</span>
-                                <span>85%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 85%;"></div>
+                        
+                        <p class="home-description">
+                            I'm a <strong>Web Developer</strong> with 5+ years of experience, 
+                            founder of <strong>FemTech</strong>. I specialize in building 
+                            modern, responsive websites that solve real problems.
+                        </p>
+                        
+                        <div class="home-location">
+                            <i class="fas fa-map-pin"></i>
+                            <span>Mowe, Ogun State, Nigeria</span>
+                        </div>
+                        
+                        <!-- TECH STACK -->
+                        <div class="home-tech">
+                            <div class="tech-label">My Tech Stack:</div>
+                            <div class="tech-icons">
+                                <img src="assets/logos/html.svg" alt="HTML" class="tech-icon" title="HTML5">
+                                <img src="assets/logos/css.svg" alt="CSS" class="tech-icon" title="CSS3">
+                                <img src="assets/logos/js.svg" alt="JavaScript" class="tech-icon" title="JavaScript">
+                                <img src="assets/logos/php.svg" alt="PHP" class="tech-icon" title="PHP">
                             </div>
                         </div>
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>UI/UX Design</span>
-                                <span>90%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 90%;"></div>
-                            </div>
+                        
+                        <div class="home-cta">
+                            <a href="#projects" class="btn btn-primary">
+                                <span>View My Work</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                            <a href="#contact" class="btn btn-outline">
+                                <span>Hire Me</span>
+                                <i class="fas fa-paper-plane"></i>
+                            </a>
+                        </div>
+                        
+                        <!-- Social Links -->
+                        <div class="home-social">
+                            <a href="https://github.com/yourusername" class="social-link" target="_blank"><i class="fab fa-github"></i></a>
+                            <a href="https://linkedin.com/in/yourprofile" class="social-link" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://web.facebook.com/babafemidavidolawuni" class="social-link" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/femtech.technologies" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
-                </div>
-                <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="FemTech Technologies team working">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services">
-        <div class="container">
-            <h2>Our Services</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                    <h3>Custom Web Development</h3>
-                    <p>We build responsive, high-performance websites and web applications tailored to your specific business requirements.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <h3>E-Learning Systems</h3>
-                    <p>Complete learning management solutions with course creation, student tracking, and certification features.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <h3>Mobile Development</h3>
-                    <p>Cross-platform mobile applications that work seamlessly on both iOS and Android devices.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>Business Automation</h3>
-                    <p>Streamline your operations with custom CRM, ERP, and workflow automation solutions.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-link"></i>
-                    </div>
-                    <h3>Blockchain Integration</h3>
-                    <p>Secure, decentralized solutions including smart contracts, digital wallets, and token systems.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-search-dollar"></i>
-                    </div>
-                    <h3>SEO & Digital Marketing</h3>
-                    <p>Increase your online visibility and attract more customers with our proven marketing strategies.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section id="portfolio">
-        <div class="container">
-            <h2>Our Portfolio</h2>
-            <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="FemTech Digital Courses platform" class="portfolio-image">
-                    <div class="portfolio-overlay">
-                        <h3>FemTech Digital Courses</h3>
-                        <p>A comprehensive e-learning platform with wallet system and user-generated content.</p>
-                        <a href="#" class="btn btn-outline">View Project</a>
-                    </div>
-                </div>
-
-                <div class="portfolio-item">
-                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Bigtenx.com blockchain platform" class="portfolio-image">
-                    <div class="portfolio-overlay">
-                        <h3>Bigtenx.com</h3>
-                        <p>Blockchain-integrated affiliate platform with advertising and digital asset trading.</p>
-                        <a href="#" class="btn btn-outline">View Project</a>
+                    
+                    <!-- Right Image -->
+                    <div class="home-visual" data-aos="fade-left">
+                        <div class="visual-wrapper">
+                            <div class="visual-image">
+                                <img src="assets/images/hero-placeholder.png" alt="Olawuni Babafemi David" class="profile-image">
+                                <div class="image-overlay"></div>
+                            </div>
+                            
+                            <!-- Experience Badge -->
+                            <div class="visual-badge">
+                                <div class="badge-icon">
+                                    <i class="fas fa-code"></i>
+                                </div>
+                                <div class="badge-info">
+                                    <span class="badge-label">Experience</span>
+                                    <span class="badge-value">5+ Years</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Projects Badge -->
+                            <div class="visual-badge bottom">
+                                <div class="badge-icon">
+                                    <i class="fas fa-rocket"></i>
+                                </div>
+                                <div class="badge-info">
+                                    <span class="badge-label">Projects</span>
+                                    <span class="badge-value">50+ Done</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
-            <h2>Get In Touch</h2>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h3>Let's Talk About Your Project</h3>
-                    <p>Have a project in mind or want to discuss how FemTech Technologies can help your business? Reach out to us through any of the channels below.</p>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
+        <!-- ABOUT SECTION -->
+        <section id="about" class="section about">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <span class="section-subtitle">GET TO KNOW ME</span>
+                    <h2 class="section-title">About <span class="highlight">Me</span></h2>
+                    <div class="section-line"></div>
+                </div>
+                
+                <div class="about-grid">
+                    <div class="about-content" data-aos="fade-right">
+                        <h3 class="about-name">Olawuni Babafemi David</h3>
+                        <div class="about-role">Founder & Lead Developer @ FemTech</div>
+                        
+                        <div class="about-text">
+                            <p class="about-paragraph">
+                                I'm a passionate web developer with over 5 years of experience crafting 
+                                digital solutions that solve real-world problems. Based in Mowe, Ogun State, 
+                                I've worked with clients across Nigeria and beyond.
+                            </p>
+                            
+                            <p class="about-paragraph">
+                                My journey into web development started with curiosity and grew into a mission: 
+                                to build websites and applications that don't just look good—they perform 
+                                exceptionally well. Every line of code I write is driven by a commitment to 
+                                quality and user experience.
+                            </p>
+                            
+                            <p class="about-paragraph">
+                                As the founder of FemTech, I specialize in <strong>HTML, CSS, JavaScript, and PHP</strong>. 
+                                I deliver projects on time, communicate clearly, and exceed client expectations.
+                            </p>
+                        </div>
+                        
+                        <!-- Stats -->
+                        <div class="about-stats">
+                            <div class="stat-item">
+                                <span class="stat-number" data-target="5">5+</span>
+                                <span class="stat-label">Years</span>
                             </div>
-                            <div>
-                                <h4>Location</h4>
-                                <p>Ogun, Nigeria</p>
+                            <div class="stat-item">
+                                <span class="stat-number" data-target="50">50+</span>
+                                <span class="stat-label">Projects</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number" data-target="30">30+</span>
+                                <span class="stat-label">Clients</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number" data-target="100">100%</span>
+                                <span class="stat-label">Satisfaction</span>
                             </div>
                         </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
+                        
+                        <!-- CV Button -->
+                        <a href="#" class="btn btn-primary">
+                            <span>Download CV</span>
+                            <i class="fas fa-download"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="about-code" data-aos="fade-left">
+                        <div class="code-window">
+                            <div class="code-header">
+                                <span class="code-dot red"></span>
+                                <span class="code-dot yellow"></span>
+                                <span class="code-dot green"></span>
+                                <span class="code-title">about-me.php</span>
                             </div>
-                            <div>
-                                <h4>Email</h4>
-                                <p>babafemiolawuni@gmail.com</p>
+                            <div class="code-body">
+                                <pre><span class="code-comment">// Developer profile</span>
+<span class="code-var">$femi</span> = [
+    <span class="code-key">'name'</span> => <span class="code-string">'Olawuni Babafemi David'</span>,
+    <span class="code-key">'brand'</span> => <span class="code-string">'FemTech'</span>,
+    <span class="code-key">'location'</span> => <span class="code-string">'Mowe, Ogun State'</span>,
+    <span class="code-key">'experience'</span> => <span class="code-number">5</span>,
+    <span class="code-key">'skills'</span> => [
+        <span class="code-string">'HTML5'</span>,
+        <span class="code-string">'CSS3'</span>,
+        <span class="code-string">'JavaScript'</span>,
+        <span class="code-string">'PHP'</span>
+    ],
+    <span class="code-key">'philosophy'</span> => <span class="code-string">'Build things that matter'</span>
+];</pre>
                             </div>
                         </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS SECTION -->
+        <section id="projects" class="section projects">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <span class="section-subtitle">MY WORK</span>
+                    <h2 class="section-title">Featured <span class="highlight">Projects</span></h2>
+                    <div class="section-line"></div>
+                </div>
+                
+                <div class="projects-grid">
+                    <!-- Project 1 - Ijebu Rewa Blog -->
+                    <div class="project-card" data-aos="fade-up">
+                        <div class="project-media">
+                            <img src="assets/images/ijeburewa.png" alt="Ijebu Rewa Blog" class="project-image">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="https://ijeburewablog.com.ng" class="project-link" target="_blank">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                    <a href="#" class="project-link" target="_blank">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
                             </div>
-                            <div>
-                                <h4>Phone</h4>
-                                <p>+234 901 365 6460</p>
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">Ijebu Rewa Blog</h3>
+                            <p class="project-description">
+                                A modern blog website for Ijebu Rewa with news, articles, and community engagement features. Built with PHP and MySQL for dynamic content management.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-badge">HTML</span>
+                                <span class="tech-badge">CSS</span>
+                                <span class="tech-badge">JavaScript</span>
+                                <span class="tech-badge">PHP</span>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="social-media-section">
-                        <h3>Connect With Us</h3>
-                        <div style="margin-top: 20px;">
-                            <a href="https://www.facebook.com/profile.php?id=61576890404001" target="_blank" class="social-btn">
-                                <i class="fab fa-facebook-f"></i> Facebook Page
-                            </a>
-                            <a href="https://wa.me/2349013656460" target="_blank" class="social-btn">
-                                <i class="fab fa-whatsapp"></i> WhatsApp Chat
-                            </a>
-                            <a href="mailto:babafemiolawuni@gmail.com" class="social-btn">
-                                <i class="fas fa-envelope"></i> Email Us
-                            </a>
+                    <!-- Project 2 - Atayese FM -->
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="50">
+                        <div class="project-media">
+                            <img src="assets/images/atayese.png" alt="Atayese FM" class="project-image">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="https://atayesefm.com.ng" class="project-link" target="_blank">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                    <a href="#" class="project-link" target="_blank">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">Atayese FM Radio Website</h3>
+                            <p class="project-description">
+                                Complete radio station website with live streaming, program schedules, and news updates. Features audio streaming integration and content management.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-badge">HTML</span>
+                                <span class="tech-badge">CSS</span>
+                                <span class="tech-badge">JavaScript</span>
+                                <span class="tech-badge">PHP</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 3 - Ijebu Youth Association -->
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="project-media">
+                            <img src="assets/images/iya.png" alt="Ijebu Youth Association" class="project-image">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="https://ijebuyouthassociation.com.ng" class="project-link" target="_blank">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                    <a href="#" class="project-link" target="_blank">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">Ijebu Youth Association</h3>
+                            <p class="project-description">
+                                Official website for Ijebu Youth Association with membership management, event registration, and news portal. Custom CMS for easy content updates.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-badge">HTML</span>
+                                <span class="tech-badge">CSS</span>
+                                <span class="tech-badge">JavaScript</span>
+                                <span class="tech-badge">PHP</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 4 - Coosamerz Hospitality -->
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="150">
+                        <div class="project-media">
+                            <img src="assets/images/coosamerz.png" alt="Coosamerz Hospitality" class="project-image">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="https://coosamerzhospitalitysolutions.com.ng" class="project-link" target="_blank">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                    <a href="#" class="project-link" target="_blank">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">Coosamerz Hospitality</h3>
+                            <p class="project-description">
+                                Accommodation booking platform with room management, online reservations, and payment integration. Real-time availability checking.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-badge">HTML</span>
+                                <span class="tech-badge">CSS</span>
+                                <span class="tech-badge">JavaScript</span>
+                                <span class="tech-badge">PHP</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 5 - LM Institute -->
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="project-media">
+                            <img src="assets/images/lm.png" alt="LM Institute" class="project-image">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="https://lminstitute.com.ng" class="project-link" target="_blank">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                    <a href="#" class="project-link" target="_blank">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">LM Institute</h3>
+                            <p class="project-description">
+                                Educational institute website with course listings, student portal, and online registration. Features learning management system integration.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-badge">HTML</span>
+                                <span class="tech-badge">CSS</span>
+                                <span class="tech-badge">JavaScript</span>
+                                <span class="tech-badge">PHP</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 6 - Multipurpose School Portal -->
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="250">
+                        <div class="project-media">
+                            <img src="assets/images/tmc.png" alt="School Portal" class="project-image">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="#" class="project-link" target="_blank">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                    <a href="#" class="project-link" target="_blank">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">Multipurpose School Portal</h3>
+                            <p class="project-description">
+                                Comprehensive school management system with student records, attendance tracking, grade management, and parent-teacher communication. (In Development)
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-badge">HTML</span>
+                                <span class="tech-badge">CSS</span>
+                                <span class="tech-badge">JavaScript</span>
+                                <span class="tech-badge">PHP</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 7 - Inventory System -->
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="project-media">
+                            <img src="assets/images/inventory.avif" alt="Inventory System" class="project-image">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="#" class="project-link" target="_blank">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                    <a href="#" class="project-link" target="_blank">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">Inventory Management System</h3>
+                            <p class="project-description">
+                                Complete inventory system with stock tracking, purchase orders, sales management, and reporting. Features barcode scanning and low stock alerts.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-badge">HTML</span>
+                                <span class="tech-badge">CSS</span>
+                                <span class="tech-badge">JavaScript</span>
+                                <span class="tech-badge">PHP</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS SECTION -->
+        <section id="skills" class="section skills">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <span class="section-subtitle">MY EXPERTISE</span>
+                    <h2 class="section-title">Technical <span class="highlight">Skills</span></h2>
+                    <div class="section-line"></div>
+                </div>
+                
+                <div class="skills-wrapper">
+                    <!-- Frontend Skills -->
+                    <div class="skill-category" data-aos="fade-right">
+                        <h3><i class="fas fa-code"></i> Frontend</h3>
+                        <div class="skill-items">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span>HTML5</span>
+                                    <span>95%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 95%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span>CSS3</span>
+                                    <span>92%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 92%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span>JavaScript</span>
+                                    <span>88%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 88%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Backend Skills -->
+                    <div class="skill-category" data-aos="fade-up">
+                        <h3><i class="fas fa-server"></i> Backend</h3>
+                        <div class="skill-items">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span>PHP</span>
+                                    <span>90%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span>MySQL</span>
+                                    <span>87%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 87%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Tools -->
+                    <div class="skill-category" data-aos="fade-left">
+                        <h3><i class="fas fa-tools"></i> Tools</h3>
+                        <div class="skill-items">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span>Git</span>
+                                    <span>88%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 88%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span>VS Code</span>
+                                    <span>95%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 95%"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="contact-form">
-                    <form id="whatsappForm">
-                        <div class="form-group">
-                            <input type="text" name="name" class="form-control" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="tel" name="phone" class="form-control" placeholder="Your WhatsApp Number" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" name="email" class="form-control" placeholder="Your Email (optional)">
-                        </div>
-                        <div class="form-group">
-                            <select name="service" class="form-control" required>
-                                <option value="">Select Service Needed</option>
-                                <option value="Web Development">Website Development</option>
-                                <option value="Mobile App">Mobile Application</option>
-                                <option value="E-Learning System">E-Learning Platform</option>
-                                <option value="Blockchain">Blockchain Solution</option>
-                                <option value="Digital Marketing">Digital Marketing</option>
-                                <option value="Other">Other Service</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <textarea name="message" class="form-control" placeholder="Describe your project needs" required rows="5"></textarea>
-                        </div>
-                        <button type="submit" class="btn">
-                            <i class="fab fa-whatsapp"></i> Send via WhatsApp
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>FemTech</h3>
-                    <p>Building impactful digital solutions that empower individuals, institutions, and businesses.</p>
-                    <div class="social-links">
-                        <a href="https://www.facebook.com/profile.php?id=61576890404001" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://wa.me/2349013656460" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-                        <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <!-- Tech Icons -->
+                <div class="skills-icons" data-aos="fade-up">
+                    <div class="icons-wrapper">
+                        <img src="assets/logos/html.svg" alt="HTML" class="skill-icon">
+                        <img src="assets/logos/css.svg" alt="CSS" class="skill-icon">
+                        <img src="assets/logos/js.svg" alt="JavaScript" class="skill-icon">
+                        <img src="assets/logos/php.svg" alt="PHP" class="skill-icon">
                     </div>
                 </div>
-                <div class="footer-column">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="#hero">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#portfolio">Portfolio</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="section contact">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <span class="section-subtitle">GET IN TOUCH</span>
+                    <h2 class="section-title">Contact <span class="highlight">Me</span></h2>
+                    <div class="section-line"></div>
                 </div>
-                <div class="footer-column">
-                    <h3>Services</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Web Development</a></li>
-                        <li><a href="#">Mobile Apps</a></li>
-                        <li><a href="#">Blockchain</a></li>
-                        <li><a href="#">Digital Marketing</a></li>
-                        <li><a href="#">SEO</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Newsletter</h3>
-                    <p>Subscribe to our newsletter for the latest updates.</p>
-                    <form class="newsletter-form">
-                        <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Your Email" required>
+                
+                <div class="contact-wrapper">
+                    <div class="contact-grid">
+                        <div class="contact-info" data-aos="fade-right">
+                            <h3>Let's work together</h3>
+                            <p>Have a project in mind? I'm always interested in hearing about new opportunities.</p>
+                            
+                            <div class="info-details">
+                                <div class="info-item">
+                                    <i class="fas fa-envelope"></i>
+                                    <div>
+                                        <h4>Email</h4>
+                                        <a href="mailto:babafemiolawuni@gmail.com">babafemiolawuni@gmail.com</a>
+                                    </div>
+                                </div>
+                                
+                                <div class="info-item">
+                                    <i class="fab fa-whatsapp"></i>
+                                    <div>
+                                        <h4>WhatsApp</h4>
+                                        <a href="https://wa.me/2349013656460">+234 901 365 6460</a>
+                                    </div>
+                                </div>
+                                
+                                <div class="info-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <div>
+                                        <h4>Location</h4>
+                                        <span>Mowe, Ogun State, Nigeria</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="social-links">
+                                <a href="https://github.com/Babafemi-Olawuni-1" class="social-link" target="_blank"><i class="fab fa-github"></i></a>
+                                <a href="https://linkedin.com/in/yourprofile" class="social-link" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="https://web.facebook.com/babafemidavidolawuni" class="social-link" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                <a href="https://www.instagram.com/femtech.technologies" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+                            </div>
                         </div>
-                        <button type="submit" class="btn">Subscribe</button>
-                    </form>
+                        
+                        <form class="contact-form" data-aos="fade-left">
+                            <div class="form-group">
+                                <input type="text" id="name" required>
+                                <label for="name">Your Name</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="email" required>
+                                <label for="email">Your Email</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="subject">
+                                <label for="subject">Subject</label>
+                            </div>
+                            <div class="form-group">
+                                <textarea id="message" rows="5" required></textarea>
+                                <label for="message">Your Message</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">
+                                Send Message <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
                 </div>
             </div>
-            <div class="copyright">
-                <p>&copy; 2025 FemTech Technologies. All Rights Reserved.</p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-bracket">&lt;</span>
+                    <span>FemTech</span>
+                    <span class="logo-bracket">/&gt;</span>
+                </div>
+                <p>Building digital experiences that matter.</p>
+                <p class="copyright">© 2024 Olawuni Babafemi David. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript -->
-    <script>
-        // Mobile Menu Toggle
-        const menuToggle = document.getElementById('mobile-menu');
-        const navLinks = document.getElementById('nav-links');
-        
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-        
-        // Close mobile menu when clicking a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-            });
-        });
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80,
-                    behavior: 'smooth'
-                });
-            });
-        });
-        
-        // Sticky header on scroll
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            header.classList.toggle('sticky', window.scrollY > 0);
-        });
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
 
-        // WhatsApp Form Submission
-        document.getElementById('whatsappForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const formData = new FormData(this);
-            const phone = "2349013656460";
-            
-            let message = `*NEW CLIENT ENQUIRY - FemTech Technologies*\n\n`;
-            message += `👤 *Name:* ${formData.get('name')}\n`;
-            message += `📞 *Phone:* ${formData.get('phone')}\n`;
-            if(formData.get('email')) message += `📧 *Email:* ${formData.get('email')}\n`;
-            message += `🛠 *Service Needed:* ${formData.get('service')}\n\n`;
-            message += `*Project Details:*\n${formData.get('message')}\n\n`;
-            message += `_Submitted via FemTech Website_`;
-            
-            const encodedMessage = encodeURIComponent(message);
-            window.open(`https://wa.me/${phone}?text=${encodedMessage}`, '_blank');
-            
-            alert("Thank you! You'll be redirected to WhatsApp to complete your inquiry.");
-            
-            // Save to local storage
-            const submission = {
-                ...Object.fromEntries(formData),
-                timestamp: new Date().toISOString()
-            };
-            localStorage.setItem('whatsapp_submission', JSON.stringify(submission));
-            
-            // Track conversion in Facebook Pixel
-            if(typeof fbq !== 'undefined') {
-                fbq('track', 'Lead');
-            }
-        });
-
-        // Newsletter Subscription
-        const newsletterForm = document.querySelector('.newsletter-form');
-        if(newsletterForm) {
-            newsletterForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                const email = this.querySelector('[type="email"]').value;
-                
-                if(/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-                    let subscribers = JSON.parse(localStorage.getItem('newsletterSubscribers') || '[]');
-                    if(!subscribers.includes(email)) {
-                        subscribers.push(email);
-                        localStorage.setItem('newsletterSubscribers', JSON.stringify(subscribers));
-                        alert('Thank you for subscribing to our newsletter!');
-                        this.reset();
-                    } else {
-                        alert('This email is already subscribed.');
-                    }
-                } else {
-                    alert('Please enter a valid email address.');
-                }
-            });
-        }
-    </script>
-    
-    <!-- Monetag Ad Code -->
-    <script>
-        var monetag = monetag || {};
-        monetag.ad = '<div id="container-mntn-xx-xx"></div>';
-        monetag.pub = 'YOUR_PUBLISHER_ID';
-        monetag.placer = '#container-mntn-xx-xx';
-        monetag.params = {
-            bd: '#6c63ff',
-            bg: '#f8f9fa',
-            text: '#2a2a72
-        };
-        (function(){
-            var d=document, s=d.createElement('script');
-            s.src='https://cdn.monetag.com/ads/js/monetag.js';
-            s.async=true;
-            d.head.appendChild(s);
-        })();
-    </script>
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/rain.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
