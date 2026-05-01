@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>My 20th Birthday Wishlist · Future Billionaire Edition</title>
+    
+    <!-- Google Fonts: Poppins + Inter + Fira Code (portfolio vibe) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Poppins:wght@400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* CSS Variables - matching portfolio dark/neon theme */
+        :root {
+            --primary: #00BFFF;
+            --primary-dark: #0099cc;
+            --primary-light: #33ccff;
+            --primary-rgb: 0, 191, 255;
+            
+            --bg-dark: #0a0a0a;
+            --bg-darker: #050505;
+            --bg-light: #111111;
+            --bg-lighter: #1a1a1a;
+            
+            --text-light: #ffffff;
+            --text-dark: #e0e0e0;
+            --text-gray: #a0a0a0;
+            --text-muted: #666666;
+            
+            --border-color: #222222;
+            --border-light: #333333;
+            
+            --card-bg: #0f0f0f;
+            --card-hover: #151515;
+            
+            --gradient: linear-gradient(135deg, #00BFFF 0%, #0099cc 100%);
+            --gradient-glow: linear-gradient(135deg, rgba(0, 191, 255, 0.2) 0%, rgba(0, 153, 204, 0.2) 100%);
+            
+            --shadow-sm: 0 5px 15px rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.4);
+            --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.5);
+            --shadow-primary: 0 10px 30px rgba(0, 191, 255, 0.2);
+            
+            --border-radius-sm: 8px;
+            --border-radius-md: 12px;
+            --border-radius-lg: 20px;
+        }
+
+        body {
+            background: radial-gradient(circle at 10% 20%, #0a0c12 0%, #030507 100%);
+            font-family: 'Inter', sans-serif;
+            color: var(--text-light);
+            line-height: 1.5;
+            overflow-x: hidden;
+        }
+
+        /* Animated background canvas like portfolio */
+        #code-rain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.35;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 4rem;
+            position: relative;
+            z-index: 2;
+            animation: fadeInUp 0.7s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        }
+
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Navigation / Header Badge */
+        .portfolio-badge {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        .badge-line {
+            width: 50px;
+            height: 2px;
+            background: var(--gradient);
+        }
+        .badge-text {
+            color: var(--primary);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 500;
+            font-family: 'Fira Code', monospace;
+        }
+        .designer-tag {
+            background: rgba(0, 191, 255, 0.15);
+            border: 1px solid rgba(0, 191, 255, 0.3);
+            border-radius: 40px;
+            padding: 0.3rem 1rem;
+            font-size: 0.75rem;
+            font-family: 'Fira Code', monospace;
+            color: var(--primary-light);
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            max-width: 880px;
+            margin: 0 auto 3rem;
+        }
+        .hero h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3.2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #FFFFFF 30%, #B9BFFF 80%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.2rem;
+        }
+        .hero .intro-text {
+            font-size: 1rem;
+            color: #cbd5f0;
+            background: rgba(15, 25, 45, 0.6);
+            backdrop-filter: blur(4px);
+            border-radius: 1.5rem;
+            padding: 1.2rem 1.8rem;
+            border: 1px solid rgba(100, 130, 200, 0.2);
+            text-align: left;
+            line-height: 1.7;
+        }
+
+        /* Progress Card - Dark themed like portfolio cards */
+        .progress-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            padding: 1.4rem 1.8rem;
+            margin-bottom: 3rem;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.25s ease, border-color 0.2s;
+        }
+        .progress-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--primary);
+            box-shadow: var(--shadow-primary);
+        }
+        .progress-title {
+            font-weight: 600;
+            font-size: 1.2rem;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.6rem;
+            flex-wrap: wrap;
+            font-family: 'Poppins', sans-serif;
+        }
+        .progress-track {
+            background: #1e243b;
+            border-radius: 60px;
+            height: 10px;
+            width: 100%;
+            overflow: hidden;
+            margin: 0.75rem 0 0.5rem;
+        }
+        .progress-fill {
+            background: linear-gradient(90deg, #5f7ef2, #a47eff);
+            width: 0%;
+            height: 100%;
+            border-radius: 60px;
+            transition: width 0.4s ease;
+        }
+        .amount-stats {
+            font-size: 0.85rem;
+            letter-spacing: 0.3px;
+            color: #a5b4fc;
+            font-family: 'Fira Code', monospace;
+        }
+
+        /* Wishlist Grid - 3 columns on desktop, responsive */
+        .wishlist-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.8rem;
+            margin: 2rem 0 3rem;
+        }
+
+        /* Cards with portfolio aesthetic */
+        .card {
+            background: rgba(12, 16, 28, 0.85);
+            backdrop-filter: blur(4px);
+            border-radius: var(--border-radius-lg);
+            padding: 1.5rem 1.5rem 1.8rem;
+            transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            border: 1px solid rgba(70, 100, 180, 0.25);
+            box-shadow: 0 10px 20px -8px rgba(0, 0, 0, 0.4);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            background: rgba(18, 24, 40, 0.95);
+            box-shadow: var(--shadow-primary);
+        }
+        .card-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.3px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .card-desc {
+            font-size: 0.9rem;
+            color: #cbd5e6;
+            margin: 0.65rem 0 1.2rem;
+            line-height: 1.5;
+            flex: 1;
+        }
+        .card-price {
+            font-size: 0.75rem;
+            font-weight: 500;
+            background: rgba(80, 110, 230, 0.2);
+            display: inline-block;
+            padding: 0.2rem 0.8rem;
+            border-radius: 40px;
+            width: fit-content;
+            margin-bottom: 1.2rem;
+            color: #b9cdff;
+            font-family: 'Fira Code', monospace;
+        }
+        .btn-pick {
+            background: linear-gradient(95deg, #2f3f7e, #1f2a5c);
+            border: none;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            padding: 0.8rem 0;
+            border-radius: 60px;
+            color: white;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .btn-pick i {
+            font-size: 0.85rem;
+            transition: transform 0.2s;
+        }
+        .btn-pick:hover {
+            background: linear-gradient(95deg, #4c66b0, #2e3a75);
+            transform: scale(0.97);
+            box-shadow: 0 4px 12px rgba(0, 191, 255, 0.3);
+            border-color: var(--primary-light);
+        }
+        .btn-pick:hover i {
+            transform: translateX(4px);
+        }
+
+        /* CTA + funny note section */
+        .cta-section {
+            background: linear-gradient(110deg, #0b0e1a, #080b14);
+            border-radius: var(--border-radius-lg);
+            padding: 2rem 2rem 1.6rem;
+            text-align: center;
+            margin: 2.5rem 0 2rem;
+            border: 1px solid #2d3655;
+        }
+        .cta-section p:first-child {
+            font-size: 1.4rem;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+            margin-bottom: 0.6rem;
+        }
+        .funny-note {
+            background: #00000030;
+            display: inline-block;
+            padding: 0.5rem 1.2rem;
+            border-radius: 60px;
+            font-style: italic;
+            font-size: 0.85rem;
+            margin-top: 1rem;
+            color: #cddbff;
+            font-family: 'Fira Code', monospace;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1.8rem;
+            border-top: 1px solid rgba(100, 120, 200, 0.2);
+            font-size: 0.85rem;
+            color: #8d9ad0;
+        }
+        .signature {
+            font-family: 'Poppins', monospace;
+            font-weight: 500;
+            margin-top: 0.6rem;
+            letter-spacing: 1px;
+            color: #baceff;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem 1rem 3rem;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .hero .intro-text {
+                font-size: 0.9rem;
+                padding: 1rem;
+            }
+            .cta-section p:first-child {
+                font-size: 1.2rem;
+            }
+            .card-title {
+                font-size: 1.25rem;
+            }
+            .wishlist-grid {
+                gap: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .wishlist-grid {
+                grid-template-columns: 1fr;
+            }
+            .progress-title {
+                flex-direction: column;
+                gap: 6px;
+            }
+        }
+
+        /* Custom scrollbar like portfolio */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-darker);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--border-color);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary);
+        }
+        ::selection {
+            background: var(--primary);
+            color: var(--bg-dark);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Code Rain Canvas (portfolio signature) -->
+    <canvas id="code-rain"></canvas>
+
+    <div class="container">
+        <!-- Designer badge - make it clear I'm a web designer -->
+        <div class="portfolio-badge">
+            <span class="badge-line"></span>
+            <span class="badge-text">BIRTHDAY WISHLIST // WEB DESIGNER</span>
+            <span class="designer-tag"><i class="fas fa-palette"></i> UI/UX DESIGNER & DEVELOPER</span>
+        </div>
+
+        <!-- Hero Section with exact witty text -->
+        <div class="hero">
+            <h1>My 20th Birthday Wishlist</h1>
+            <div class="intro-text">
+                I’m officially leaving my teenage years behind and stepping into a new decade. At this point, life is no longer “vibes and inshallah”—it’s strategy, structure, and small small support from my people.<br><br>
+                So in the spirit of growth, I’ve put together a humble wishlist. Nothing too crazy. Just a few things to help me avoid unnecessary suffering and step fully into my future billionaire lifestyle.<br><br>
+                Feel free to pick according to your capacity, your conscience, and how much you like me.
+            </div>
+        </div>
+
+        <!-- Laptop Progress Bar (static but clean) -->
+        <div class="progress-card">
+            <div class="progress-title">
+                <span><i class="fas fa-laptop-code" style="color: var(--primary); margin-right: 8px;"></i> Laptop Fundraiser</span>
+                <span class="amount-stats" id="laptopAmountDisplay">₦0 raised out of ₦200,000</span>
+            </div>
+            <div class="progress-track">
+                <div class="progress-fill" id="laptopProgressFill" style="width: 0%;"></div>
+            </div>
+            <div style="font-size: 0.7rem; text-align: right; opacity: 0.6; margin-top: 6px;">every contribution unlocks the billionaire blueprint</div>
+        </div>
+
+        <!-- Wishlist Grid will be injected by JS -->
+        <div class="wishlist-grid" id="wishlistGrid"></div>
+
+        <!-- Call to Action + funny note -->
+        <div class="cta-section">
+            <p>If you’ve read this far, you’re already involved. Pick something and let’s make history together.</p>
+            <div class="funny-note">
+                <i class="fas fa-trophy"></i> Top supporters will be remembered when I finally ‘make it’.
+            </div>
+        </div>
+
+        <footer>
+            Thank you for being part of my journey, directly or indirectly. Everything counts.<br>
+            <div class="signature">Future Billionaire in Progress</div>
+            <div style="font-size: 0.7rem; margin-top: 12px;"><i class="fas fa-code"></i> designed with strategy & swagger</div>
+        </footer>
+    </div>
+
+    <script>
+        // Wishlist data (exact items & descriptions)
+        const wishlistData = [
+            { name: "Laptop", targetNote: "₦200,000 Target", description: "Let’s be honest, greatness cannot be running on low battery and hanging laptop. You don’t have to buy it all, just contribute your quota so this dream can breathe." },
+            { name: "A Proper Suit", targetNote: "", description: "Because when opportunity comes, I shouldn’t be looking like I came to borrow destiny." },
+            { name: "Network Router", targetNote: "", description: "At this point, “bad network” has ruined too many opportunities. Let’s fix that once and for all." },
+            { name: "Smartwatch", targetNote: "", description: "To track my steps, my sleep, and most importantly, my journey to wealth." },
+            { name: "Business Registration", targetNote: "", description: "It’s time to stop saying “my small brand” and start saying “my registered company.”" },
+            { name: "Support My Business", targetNote: "", description: "Invest in me now so you can confidently say “I knew him before the interviews.”" },
+            { name: "Kiro Subscription", targetNote: "", description: "Free trials have stressed me enough. It’s time to unlock premium destiny." },
+            { name: "Cash Gifts", targetNote: "", description: "No long talk. This one understands itself." },
+            { name: "Birthday Cakes", targetNote: "", description: "I haven’t had a proper birthday cake in 15 years. At this point, this is not a want, it’s a national concern." },
+            { name: "Opportunities & Referrals", targetNote: "", description: "Don’t just wish me well. Connect me well." },
+            { name: "Prayers, Love & Positive Energy", targetNote: "", description: "Zero cost, but very high return on investment." },
+            { name: "Brand Materials", targetNote: "", description: "Let my brand look as expensive as the vision in my head." }
+        ];
+
+        const whatsappNumber = "2349013656460";
+        const baseWhatsAppUrl = `https://wa.me/${whatsappNumber}`;
+
+        // Prefill message exactly as required
+        function getWhatsAppMessage(itemName) {
+            return `Hi, I just picked ${itemName} from your birthday wishlist. I’m ready to support. How do we proceed?`;
+        }
+
+        function onPickItem(itemName) {
+            const message = getWhatsAppMessage(itemName);
+            const encodedMsg = encodeURIComponent(message);
+            const url = `${baseWhatsAppUrl}?text=${encodedMsg}`;
+            window.open(url, '_blank');
+        }
+
+        // Render wishlist cards with icons and dynamic WhatsApp
+        function renderWishlist() {
+            const grid = document.getElementById('wishlistGrid');
+            if (!grid) return;
+            grid.innerHTML = '';
+
+            wishlistData.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'card';
+
+                // For laptop only we show target in price span, others show fun badge
+                let priceHtml = '';
+                if (item.name === "Laptop") {
+                    priceHtml = `<div class="card-price"><i class="fas fa-coins"></i> Target: ${item.targetNote}</div>`;
+                } else if (item.name === "Cash Gifts") {
+                    priceHtml = `<div class="card-price"><i class="fas fa-gift"></i> any amount · major impact</div>`;
+                } else if (item.name === "Business Registration") {
+                    priceHtml = `<div class="card-price"><i class="fas fa-building"></i> legitimacy unlocked</div>`;
+                } else if (item.name === "Prayers, Love & Positive Energy") {
+                    priceHtml = `<div class="card-price"><i class="fas fa-heart"></i> priceless vibes</div>`;
+                } else {
+                    priceHtml = `<div class="card-price"><i class="fas fa-star"></i> support level: unlimited</div>`;
+                }
+
+                // Title with optional small icon
+                let titleDisplay = item.name;
+                if (item.name === "Laptop") titleDisplay = "Laptop 💻";
+                
+                card.innerHTML = `
+                    <div class="card-title">
+                        ${titleDisplay}
+                        ${item.name === "A Proper Suit" ? '<i class="fas fa-tshirt" style="color: var(--primary); font-size: 1.2rem;"></i>' : ''}
+                        ${item.name === "Network Router" ? '<i class="fas fa-wifi" style="color: var(--primary);"></i>' : ''}
+                        ${item.name === "Smartwatch" ? '<i class="fas fa-clock" style="color: var(--primary);"></i>' : ''}
+                        ${item.name === "Business Registration" ? '<i class="fas fa-file-signature" style="color: var(--primary);"></i>' : ''}
+                        ${item.name === "Support My Business" ? '<i class="fas fa-chart-line" style="color: var(--primary);"></i>' : ''}
+                        ${item.name === "Kiro Subscription" ? '<i class="fas fa-crown" style="color: var(--primary);"></i>' : ''}
+                        ${item.name === "Cash Gifts" ? '<i class="fas fa-money-bill-wave" style="color: var(--primary);"></i>' : ''}
+                        ${item.name === "Birthday Cakes" ? '<i class="fas fa-cake-candles" style="color: var(--primary);"></i>' : ''}
+                        ${item.name === "Opportunities & Referrals" ? '<i class="fas fa-handshake" style="color: var(--primary);"></i>' : ''}
+                        ${item.name === "Prayers, Love & Positive Energy" ? '<i class="fas fa-praying-hands" style="color: var(--primary);"></i>' : ''}
+                        ${item.name === "Brand Materials" ? '<i class="fas fa-palette" style="color: var(--primary);"></i>' : ''}
+                    </div>
+                    <div class="card-desc">${item.description}</div>
+                    ${priceHtml}
+                    <button class="btn-pick" data-item-name="${item.name.replace(/"/g, '&quot;')}">
+                        <span>Pick This One</span> <i class="fas fa-arrow-right"></i>
+                    </button>
+                `;
+                grid.appendChild(card);
+            });
+
+            // attach event listeners to all buttons
+            const allButtons = document.querySelectorAll('.btn-pick');
+            allButtons.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const itemName = btn.getAttribute('data-item-name');
+                    if (itemName) {
+                        onPickItem(itemName);
+                    } else {
+                        // fallback: try to retrieve from card title
+                        const parentCard = btn.closest('.card');
+                        const titleDiv = parentCard?.querySelector('.card-title');
+                        let fallbackName = titleDiv ? titleDiv.innerText.trim().split('[')[0].trim() : 'this item';
+                        fallbackName = fallbackName.replace(/[💻🕶️👔🎧💰🎂🤝]/g, '').trim();
+                        if (fallbackName.includes('Laptop')) fallbackName = 'Laptop';
+                        else if (fallbackName.includes('Proper Suit')) fallbackName = 'A Proper Suit';
+                        else if (fallbackName.includes('Network Router')) fallbackName = 'Network Router';
+                        else if (fallbackName.includes('Smartwatch')) fallbackName = 'Smartwatch';
+                        else if (fallbackName.includes('Business Registration')) fallbackName = 'Business Registration';
+                        else if (fallbackName.includes('Support My Business')) fallbackName = 'Support My Business';
+                        else if (fallbackName.includes('Kiro Subscription')) fallbackName = 'Kiro Subscription';
+                        else if (fallbackName.includes('Cash Gifts')) fallbackName = 'Cash Gifts';
+                        else if (fallbackName.includes('Birthday Cakes')) fallbackName = 'Birthday Cakes';
+                        else if (fallbackName.includes('Opportunities')) fallbackName = 'Opportunities & Referrals';
+                        else if (fallbackName.includes('Prayers')) fallbackName = 'Prayers, Love & Positive Energy';
+                        else if (fallbackName.includes('Brand Materials')) fallbackName = 'Brand Materials';
+                        onPickItem(fallbackName);
+                    }
+                });
+            });
+        }
+
+        // Progress bar static ( ₦0 ) but we keep as required.
+        function initProgress() {
+            const progressFill = document.getElementById('laptopProgressFill');
+            const amountSpan = document.getElementById('laptopAmountDisplay');
+            if (progressFill) progressFill.style.width = '0%';
+            if (amountSpan) amountSpan.innerText = '₦0 raised out of ₦200,000';
+        }
+
+        // Code Rain Canvas Effect (like portfolio)
+        function initCodeRain() {
+            const canvas = document.getElementById('code-rain');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            
+            const characters = "01<>/{}[]=?!;:#$%&*";
+            const fontSize = 14;
+            const columns = Math.floor(canvas.width / fontSize);
+            const drops = Array(columns).fill(1);
+            
+            function drawRain() {
+                ctx.fillStyle = 'rgba(5, 5, 10, 0.05)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.fillStyle = '#0f0';
+                ctx.font = `500 ${fontSize}px 'Fira Code', monospace`;
+                for (let i = 0; i < drops.length; i++) {
+                    const text = characters[Math.floor(Math.random() * characters.length)];
+                    ctx.fillStyle = `rgba(0, 191, 255, ${Math.random() * 0.5 + 0.2})`;
+                    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+                    if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                        drops[i] = 0;
+                    }
+                    drops[i]++;
+                }
+                requestAnimationFrame(drawRain);
+            }
+            
+            drawRain();
+            
+            window.addEventListener('resize', () => {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            });
+        }
+        
+        // Run all
+        window.addEventListener('DOMContentLoaded', () => {
+            initCodeRain();
+            renderWishlist();
+            initProgress();
+        });
+    </script>
+</body>
+</html>
